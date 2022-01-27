@@ -19,6 +19,11 @@ const connect = async () => {
       channel: 31,
     });
 
+    const PepperAnn = await Show.create({
+      name: "Pepper Ann",
+      rating: "TV-Y7",
+    });
+
     const CowAndChicken = await Show.create({
       name: "Cow and Chicken",
       rating: "TV-Y7",
@@ -92,8 +97,21 @@ const connect = async () => {
       },
     });
 
-    await BobsBurgers.addGenre(ComedyGenre);
-    await Action.addShow(AdventureTimeShow);
+    await BobsBurgers.addGenre(ComedyGenre); //We created a reference to a genre and added it to a Show
+    await Action.addShow(AdventureTimeShow); //We created a reference to a show and added it to a genre
+
+    // Assigns many to many relationships between Shows and Genres
+    await CartoonNetwork.addShow(CowAndChicken);
+    await CartoonNetwork.addShow(EdEddEddy);
+    await CartoonNetwork.addShow(JohnnyBravo);
+    await CartoonNetwork.addShow(AdventureTime);
+    await CartoonNetwork.addShow(RegularShow);
+    await CartoonNetwork.addShow(InfinityTrain);
+    await CartoonNetwork.addShow(AquaTeenHungerForce);
+    await CartoonNetwork.addShow(Squidbillies);
+    await CartoonNetwork.addShow(BobsBurgers);
+
+    await Disney.addShow(PepperAnn);
 
     await await db.close();
   } catch (error) {

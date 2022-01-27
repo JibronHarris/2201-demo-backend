@@ -10,4 +10,14 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+//this route utilizes Eager loading
+router.get("/:network", async (req, res, next) => {
+  try {
+    const networkShows = await Network.GetNetworkAndShows(req.params.network);
+    res.json(networkShows);
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

@@ -54,6 +54,20 @@ Show.findShowByRating = function (r) {
   });
 };
 
+//Eager Loading
+Network.GetNetworkAndShows = function (n) {
+  return this.findOne({
+    where: {
+      name: n,
+    },
+    include: [
+      {
+        model: Show,
+      },
+    ],
+  });
+};
+
 Network.hasMany(Show);
 
 Show.belongsToMany(Genre, { through: "show_genre" });

@@ -17,6 +17,6 @@ Feel free to fork and clone this repo! In it we overviews:
 * How to create a route that filters values from our tables
 * How to use request body for a post request
 
-I apologize, I forgot to include an example of eager loading, but an example is present in the demo
+I apologize, I forgot to include an example of eager loading in the main portion, but an example is present at the end of the demo.
 
 Please feel free to reach out if you have any questions :)
