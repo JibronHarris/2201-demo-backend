@@ -5,6 +5,9 @@ const { db } = require("./db");
 const networkRouter = require("./routes/networks.router");
 const showRouter = require("./routes/shows.router");
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.get("/", (req, res, next) => {
   res.send("Hey we like TV here!");
 });

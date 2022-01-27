@@ -19,24 +19,24 @@ const Network = db.define("network", {
   },
 });
 
-const Show = db.define("show", {
+const Show = db.define("shows", {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
     validate: {
       notEmpty: true,
     },
-    rating: {
-      type: Sequelize.STRING,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-      },
+  },
+  rating: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: true,
     },
   },
 });
 
-const Genre = db.define("genre", {
+const Genre = db.define("genres", {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -45,6 +45,14 @@ const Genre = db.define("genre", {
     },
   },
 });
+
+Show.findShowByRating = function (r) {
+  return this.findAll({
+    where: {
+      rating: r,
+    },
+  });
+};
 
 Network.hasMany(Show);
 

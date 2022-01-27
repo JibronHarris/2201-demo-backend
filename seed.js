@@ -94,6 +94,8 @@ const connect = async () => {
 
     await BobsBurgers.addGenre(ComedyGenre);
     await Action.addShow(AdventureTimeShow);
+
+    await await db.close();
   } catch (error) {
     console.log(error);
   }
