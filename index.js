@@ -2,9 +2,15 @@ const express = require("express");
 const app = express();
 const { db } = require("./db");
 
+const networkRouter = require("./routes/networks.router");
+const showRouter = require("./routes/shows.router");
+
 app.get("/", (req, res, next) => {
-  res.send("Home");
+  res.send("Hey we like TV here!");
 });
+
+app.use("/networks", networkRouter);
+app.use("/shows", showRouter);
 
 const init = async () => {
   await db.sync();
