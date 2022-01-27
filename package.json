@@ -1,0 +1,25 @@
+{
+  "name": "2201-demo-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JibronHarris/2201-demo-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JibronHarris/2201-demo-backend/issues"
+  },
+  "homepage": "https://github.com/JibronHarris/2201-demo-backend#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "pg": "^8.7.1",
+    "sequelize": "^6.14.1"
+  }
+}
